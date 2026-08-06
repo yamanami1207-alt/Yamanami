@@ -583,7 +583,7 @@
         </div>
       </section>
 
-      <!-- CONTACT -->
+<!-- CONTACT -->
       <section id="contact" class="py-24 px-6 md:px-12 bg-stone-50 scroll-mt-20">
         <div class="max-w-2xl mx-auto">
           <div class="text-center mb-16 fade-in">
@@ -592,20 +592,21 @@
           </div>
           
           <div class="bg-white p-8 md:p-16 shadow-[0_2px_20px_rgba(0,0,0,0.04)] border border-stone-200 fade-in delay-200">
+            <!-- formタグのactionは使用せず、JSで処理します -->
             <form id="contact-form" class="space-y-8">
+              
+              <!-- 名前 -->
               <div class="space-y-2">
                 <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase">Name</label>
-                <input type="text" name="name" placeholder="お名前" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors placeholder:text-stone-300" required>
+                <input type="text" id="input-name" placeholder="お名前" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors placeholder:text-stone-300" required>
               </div>
-              <div class="space-y-2">
-                <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase">Email</label>
-                <input type="email" name="email" placeholder="メールアドレス" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors placeholder:text-stone-300" required>
-              </div>
+
+              <!-- カテゴリー -->
               <div class="space-y-2 relative">
                 <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase">Category</label>
                 <div class="relative">
-                  <select name="category" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors appearance-none cursor-pointer text-stone-400">
-                    <option value="" disabled selected>選択してください</option>
+                  <select id="input-category" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors appearance-none cursor-pointer text-stone-600">
+                    <option value="" disabled selected class="text-stone-300">選択してください</option>
                     <option value="天然石の加工（穴あけ・研磨・彫刻など）について">天然石の加工（穴あけ・研磨・彫刻など）について</option>
                     <option value="法人様向けOEM・大口注文について">法人様向けOEM・大口注文について</option>
                     <option value="ブレスレットの修理・サイズ直しについて">ブレスレットの修理・サイズ直しについて</option>
@@ -615,19 +616,11 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </div>
               </div>
+
+              <!-- メッセージ -->
               <div class="space-y-2">
                 <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase">Message</label>
-                <textarea name="message" placeholder="お問い合わせ内容" rows="4" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors resize-y placeholder:text-stone-300" required></textarea>
-              </div>
-              <div class="space-y-2">
-                <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase">Attachment (Photo)</label>
-                <p class="text-[11px] text-stone-500 leading-relaxed mt-1 normal-case tracking-normal font-light">
-                  加工のご相談、ご依頼の際、対象の石のお写真を添付していただけますと、よりスムーズなご案内が可能となります。<span class="cursor-pointer text-stone-500 hover:text-stone-800 transition-colors border-b border-stone-300 pb-0.5" id="open-rei-img">（イメージ）</span><br>
-                  また、手書きで構いませんので、簡単な図解や完成イメージのお写真も併せて送付いただけますと幸いでございます。
-                </p>
-                <div class="relative py-4 border-b border-stone-300">
-                  <input type="file" accept="image/*" multiple class="block w-full text-sm text-stone-500 file:mr-4 file:py-2.5 file:px-6 file:rounded-none file:border-0 file:text-[10px] file:font-light file:tracking-[0.1em] file:bg-[#1B2A47] file:text-white hover:file:bg-[#1B2A47]/80 file:cursor-pointer file:transition-colors focus:outline-none">
-                </div>
+                <textarea id="input-message" placeholder="お問い合わせ内容" rows="4" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors resize-y placeholder:text-stone-300" required></textarea>
               </div>
               
               <!-- 掲載許可チェックボックス -->
@@ -635,7 +628,7 @@
                 <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase mb-4">Publication</label>
                 <label class="flex items-start gap-4 cursor-pointer group">
                   <div class="relative flex items-center justify-center w-5 h-5 mt-0.5 flex-shrink-0">
-                    <input type="checkbox" name="allow_publish" value="yes" checked class="peer appearance-none w-5 h-5 border border-stone-300 bg-transparent checked:bg-[#1B2A47] checked:border-[#1B2A47] transition-colors cursor-pointer">
+                    <input type="checkbox" id="input-publish" checked class="peer appearance-none w-5 h-5 border border-stone-300 bg-transparent checked:bg-[#1B2A47] checked:border-[#1B2A47] transition-colors cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="absolute text-white opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
                   <div class="flex-1 text-left">
@@ -645,19 +638,36 @@
                 </label>
               </div>
 
-              <div class="pt-10 text-center flex justify-center">
-                <button type="button" id="submit-btn" disabled class="inline-flex items-center justify-center gap-4 text-[11px] tracking-[0.2em] px-12 py-5 border border-stone-300 text-stone-300 transition-colors duration-500 cursor-not-allowed w-full sm:w-auto min-w-[240px]">
-                  送信する
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <!-- ご安心いただくための事前案内（重要箇所の強調を追加） -->
+              <div class="mt-8 p-6 bg-stone-50 border border-stone-200 rounded text-left">
+                <h4 class="text-[12px] font-medium text-stone-700 mb-2">【お写真の添付・送信について】</h4>
+                <p class="text-[11px] text-stone-600 leading-relaxed mb-4">
+                  加工のご相談、ご依頼の際、対象の石のお写真を添付していただけますと、よりスムーズなご案内が可能となります。<span class="cursor-pointer text-stone-500 hover:text-stone-800 transition-colors border-b border-stone-300 pb-0.5" id="open-rei-img">（イメージ）</span><br>
+                  また、手書きで構いませんので、簡単な図解や完成イメージのお写真も併せて送付いただけますと幸いでございます。<br><br>
+                  下のボタンを押すと、お客様のメールアプリが起動します。<br>
+                  お写真をお送りいただく場合は、<strong class="font-bold text-[#1B2A47] border-b border-[#1B2A47]">切り替わったメール画面にて画像を添付</strong>のうえ、送信をお願いいたします。
+                </p>
+                <h4 class="text-[12px] font-medium text-[#1B2A47] mb-2">※画面切り替え時のご注意</h4>
+                <p class="text-[11px] text-stone-600 leading-relaxed">
+                  ボタンを押した際、「アプリの切り替えを許可しますか？」というメッセージや、「%E3...」といった長い英数字の羅列が表示される場合があります。<br>
+                  これらは入力された内容をメールへ正しく反映させるための正常な仕組みです。ご安心のうえ「許可」または「開く」を押してお進みください。
+                </p>
+              </div>
+
+              <!-- 送信ボタン -->
+              <div class="pt-6 text-center flex justify-center">
+                <button type="button" onclick="openMailApp()" class="inline-flex items-center justify-center gap-4 text-[12px] tracking-[0.2em] px-12 py-5 bg-[#1B2A47] text-white hover:bg-[#2c4069] transition-colors duration-300 w-full sm:w-auto min-w-[280px] shadow-sm">
+                  メールアプリを起動する
+                  <!-- 外部アプリ起動を示すアイコン -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                 </button>
               </div>
             </form>
           </div>
         </div>
       </section>
-    </main>
-  </div>
 
+ 
   <!-- SERVICES VIEW (Craft Details) -->
   <div id="services-view" style="display: none;" class="pt-32 pb-40 px-6 md:px-12 max-w-5xl mx-auto min-h-screen">
     <button data-route="home" href="#works" class="group flex items-center gap-4 text-[10px] tracking-[0.2em] text-stone-400 hover:text-stone-900 transition-colors mb-24">
@@ -962,5 +972,46 @@
   <script>
     document.getElementById('copyright-year').innerHTML = '&copy; ' + new Date().getFullYear() + ' YAMANAMI MEISEKI. All rights reserved.';
   </script>
+     <script>
+      function openMailApp() {
+        const name = document.getElementById('input-name').value;
+        const categorySelect = document.getElementById('input-category');
+        const category = categorySelect.value;
+        const message = document.getElementById('input-message').value;
+        const isPublishAllowed = document.getElementById('input-publish').checked ? "許可する" : "許可しない";
+
+        if (!name || !category || !message) {
+          alert("「お名前」「カテゴリー」「お問い合わせ内容」を入力してください。");
+          return;
+        }
+
+        // 送信先メールアドレスを設定
+        const mailTo = "info@ishiya-san.com";
+        const subject = category;
+
+        // %0D%0A はメールアプリ上で「改行」として認識される確実なコードです
+        // これを2つ連続で入れることで、きれいな空白行（余白）を作ります
+        const br = "%0D%0A";
+        const br2 = "%0D%0A%0D%0A";
+
+        // メールの本文（改行コードを使って隙間をあけています）
+        const body = 
+          "お名前：" + name + " 様" + br2 +
+          "【ご希望のカテゴリー】" + br +
+          category + br2 +
+          "【過去の加工一覧への画像掲載】" + br +
+          isPublishAllowed + br2 +
+          "【お問い合わせ内容】" + br +
+          message + br2 +
+          "------------------------------------------------" + br +
+          "※対象の石のお写真などがある場合は、このメールにそのまま画像を添付して送信をお願いいたします。";
+
+        // mailtoリンクの生成（日本語部分のみ安全にエンコード）
+        const mailtoLink = `mailto:${mailTo}?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+        // メールアプリを起動
+        window.location.href = mailtoLink;
+      }
+      </script>
 </body>
 </html>
