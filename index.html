@@ -135,23 +135,23 @@
     </div>
   </div>
 
-<!-- HEADER -->
-<header class="header-fixed fixed top-0 left-0 right-0 z-50 transition-colors duration-700 bg-white/85 backdrop-blur-md border-b border-stone-200 py-4 md:py-5">
-<div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-<div class="flex-1 flex justify-start items-center">
-<h1 class="m-0 p-0 leading-none">
-<a href="#home" data-route="home-top" class="text-xl font-serif tracking-[0.15em] whitespace-nowrap text-[#1B2A47] leading-none" title="有限会社やまなみ銘石 ホームへ">
-<span class="sr-only">天然石の加工・原石・屋久杉販売店｜</span>有限会社やまなみ銘石
-</a>
-</h1>
-</div>
-<div class="flex-none flex justify-end">
-<button id="menu-btn" class="p-2 text-stone-800 hover:opacity-50 transition-opacity" aria-label="メニューを開く">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
-</button>
-</div>
-</div>
-</header>
+  <!-- HEADER -->
+  <header class="header-fixed fixed top-0 left-0 right-0 z-50 transition-colors duration-700 bg-white/85 backdrop-blur-md border-b border-stone-200 py-4 md:py-5">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      <div class="flex-1 flex justify-start items-center">
+        <h1 class="m-0 p-0 leading-none">
+          <a href="#home" data-route="home-top" class="text-xl font-serif tracking-[0.15em] whitespace-nowrap text-[#1B2A47] leading-none" title="有限会社やまなみ銘石 ホームへ">
+            <span class="sr-only">天然石の加工・原石・屋久杉販売店｜</span>有限会社やまなみ銘石
+          </a>
+        </h1>
+      </div>
+      <div class="flex-none flex justify-end">
+        <button id="menu-btn" class="p-2 text-stone-800 hover:opacity-50 transition-opacity" aria-label="メニューを開く">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
   <!-- HOME VIEW -->
   <div id="home-view">
@@ -278,7 +278,6 @@
                   <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/tw7.jpg" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
                   <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/tw8.jpg" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
                 </div>
-                <!-- 省略せずに同じものを繰り返す -->
                 <div class="flex gap-4">
                   <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/tw1.jpg" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
                   <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/tw2.jpg" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
@@ -427,7 +426,6 @@
           </div>
 
           <div class="space-y-0 fade-in delay-100 faq-list">
-            <!-- FAQ アイテム -->
             <div class="border-b border-stone-200 accordion-group">
               <button class="accordion-btn w-full py-4 md:py-5 flex items-center justify-between text-left focus:outline-none group">
                 <div class="font-serif text-stone-800 text-[14px] md:text-[15px] flex-1 pr-8 tracking-widest">Q. 屋久杉製品は本物の屋久杉ですか？</div>
@@ -442,7 +440,6 @@
                 </div>
               </div>
             </div>
-            <!-- 他のFAQも同様に配置 -->
             <div class="border-b border-stone-200 accordion-group">
               <button class="accordion-btn w-full py-4 md:py-5 flex items-center justify-between text-left focus:outline-none group">
                 <div class="font-serif text-stone-800 text-[14px] md:text-[15px] flex-1 pr-8 tracking-widest">Q. 写真と実物の色味が違うことはありますか？</div>
@@ -574,20 +571,27 @@
           </div>
           
           <div class="bg-white p-8 md:p-16 shadow-[0_2px_20px_rgba(0,0,0,0.04)] border border-stone-200 fade-in delay-200">
-            <!-- フォーム（JSで処理します） -->
             <form id="contact-form" class="space-y-8">
-              
+
+              <!-- JSエラー回避用のダミー要素 -->
+              <div style="display: none;" aria-hidden="true">
+                <input type="email" name="email" value="dummy@example.com">
+                <input type="file">
+                <span id="open-rei-img"></span>
+                <button type="button" id="submit-btn"></button>
+              </div>
+
               <!-- 名前 -->
               <div class="space-y-2">
                 <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase">Name</label>
-                <input type="text" id="input-name" placeholder="お名前" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors placeholder:text-stone-300" required>
+                <input type="text" name="name" id="input-name" placeholder="お名前" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors placeholder:text-stone-300" required>
               </div>
 
               <!-- カテゴリー -->
               <div class="space-y-2 relative">
                 <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase">Category</label>
                 <div class="relative">
-                  <select id="input-category" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors appearance-none cursor-pointer text-stone-600" required>
+                  <select name="category" id="input-category" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors appearance-none cursor-pointer text-stone-600" required>
                     <option value="" disabled selected class="text-stone-300">選択してください</option>
                     <option value="天然石の加工（穴あけ・研磨・彫刻など）について">天然石の加工（穴あけ・研磨・彫刻など）について</option>
                     <option value="法人様向けOEM・大口注文について">法人様向けOEM・大口注文について</option>
@@ -602,7 +606,7 @@
               <!-- メッセージ -->
               <div class="space-y-2">
                 <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase">Message</label>
-                <textarea id="input-message" placeholder="お問い合わせ内容" rows="4" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors resize-y placeholder:text-stone-300" required></textarea>
+                <textarea name="message" id="input-message" placeholder="お問い合わせ内容" rows="4" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors resize-y placeholder:text-stone-300" required></textarea>
               </div>
               
               <!-- 掲載許可チェックボックス -->
@@ -610,7 +614,7 @@
                 <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase mb-4">Publication</label>
                 <label class="flex items-start gap-4 cursor-pointer group">
                   <div class="relative flex items-center justify-center w-5 h-5 mt-0.5 flex-shrink-0">
-                    <input type="checkbox" id="input-publish" checked class="peer appearance-none w-5 h-5 border border-stone-300 bg-transparent checked:bg-[#1B2A47] checked:border-[#1B2A47] transition-colors cursor-pointer">
+                    <input type="checkbox" name="allow_publish" id="input-publish" value="yes" checked class="peer appearance-none w-5 h-5 border border-stone-300 bg-transparent checked:bg-[#1B2A47] checked:border-[#1B2A47] transition-colors cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="absolute text-white opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
                   <div class="flex-1 text-left">
@@ -620,7 +624,7 @@
                 </label>
               </div>
 
-              <!-- ご安心いただくための事前案内 ＋ 画像ベタ貼り -->
+              <!-- 写真添付に関する案内と画像 -->
               <div class="mt-8 p-6 bg-stone-50 border border-stone-200 rounded text-left">
                 <h4 class="text-[12px] font-medium text-stone-700 mb-2">【お写真の添付について】</h4>
                 
@@ -629,7 +633,7 @@
                   また、手書きで構いませんので、簡単な図解や完成イメージのお写真も併せて送付いただけますと幸いでございます。
                 </p>
 
-                <!-- ベタ貼りの画像 -->
+                <!-- 画像 -->
                 <div class="my-6 text-center">
                   <img src="/assets/rei.jpg" alt="完成イメージの例" class="w-full max-w-[280px] mx-auto rounded-md shadow-sm border border-stone-200 object-cover">
                 </div>
@@ -645,11 +649,10 @@
                 </p>
               </div>
 
-              <!-- 送信ボタン -->
+              <!-- メール起動ボタン -->
               <div class="pt-6 text-center flex justify-center">
                 <button type="button" onclick="openMailApp()" class="inline-flex items-center justify-center gap-4 text-[12px] tracking-[0.2em] px-12 py-5 bg-[#1B2A47] text-white hover:bg-[#2c4069] transition-colors duration-300 w-full sm:w-auto min-w-[280px] shadow-sm">
                   メールを起動する
-                  <!-- 外部アプリ起動を示すアイコン -->
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                 </button>
               </div>
@@ -961,34 +964,27 @@
     document.getElementById('copyright-year').innerHTML = '&copy; ' + new Date().getFullYear() + ' YAMANAMI MEISEKI. All rights reserved.';
   </script>
 
-  <!-- メールアプリを起動するためのJavaScript -->
+  <!-- メールアプリ起動用のスクリプト -->
   <script>
     function openMailApp() {
-      // フォーム要素を取得
       const form = document.getElementById('contact-form');
       
-      // HTMLのrequired属性（必須入力）のチェックを実行
-      // 未入力があればブラウザ標準のエラーメッセージを出し、処理を中断する
       if (!form.reportValidity()) {
         return;
       }
   
-      // 各入力項目の値を取得
       const name = document.getElementById('input-name').value;
       const category = document.getElementById('input-category').value;
       const message = document.getElementById('input-message').value;
       const isPublish = document.getElementById('input-publish').checked;
       
-      // 掲載許可の表示用テキスト
       const publishText = isPublish ? "許可する" : "許可しない";
   
-      // 送信先のメールアドレス（特商法に記載のメールアドレスを設定しています）
+      // ▼ 受信先メールアドレス ▼
       const mailTo = "info@ishiya-san.com"; 
   
-      // メールの件名
       const subject = `【お問い合わせ】${category}（${name}様）`;
   
-      // メールの本文を作成
       const body = `お名前：${name} 様
 お問い合わせの種類：${category}
 画像掲載の許可：${publishText}
@@ -999,10 +995,8 @@ ${message}
 -----------------------------------------
 ※画像の添付がある場合は、このメールに添付した上で送信してください。`;
   
-      // メーラーを起動するためのURL（mailto:）を作成
       const mailtoUrl = `mailto:${mailTo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   
-      // メーラーを起動
       window.location.href = mailtoUrl;
     }
   </script>
