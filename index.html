@@ -44,13 +44,16 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
     </button>
     <div class="bg-[#fdfdfc] w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-sm shadow-2xl scale-95 transition-transform duration-300 transform relative flex flex-col pt-12 pb-12 px-6 md:px-12" id="attachment-modal-content">
+      
       <div class="space-y-8">
         <h3 class="text-xl font-serif tracking-[0.15em] text-stone-800 text-center border-b border-stone-200 pb-6">お写真の添付について</h3>
+        
         <div class="space-y-6 text-stone-600 font-light text-[14px] leading-loose">
           <p class="text-center">
             加工をご希望の天然石や原石のお写真を添付いただきますと、<br class="hidden md:block" />
             より具体的でスムーズなご案内が可能となります。
           </p>
+
           <div class="bg-stone-50 border border-stone-200 p-6 rounded-sm space-y-4">
             <h4 class="font-medium text-stone-700 tracking-wide text-center">撮影時のポイント</h4>
             <ul class="list-disc list-inside space-y-2 text-stone-600">
@@ -59,6 +62,7 @@
               <li>「ここに穴を開けたい」「この部分を削りたい」といったご希望がある場合は、<strong>簡単な手書きの図解やメモ</strong>を一緒に撮影いただいたものでも構いません。</li>
             </ul>
           </div>
+
           <div class="flex flex-col items-center justify-center pt-6 border-t border-stone-200">
             <p class="text-[13px] font-medium text-stone-700 tracking-widest mb-4">加工指示のイメージ</p>
             <img src="/assets/memo.jpg" alt="加工指示のイメージ" class="w-full rounded border border-stone-200 shadow-sm bg-white" style="object-fit: contain;" />
@@ -131,23 +135,23 @@
     </div>
   </div>
 
-  <!-- HEADER -->
-  <header class="header-fixed fixed top-0 left-0 right-0 z-50 transition-colors duration-700 bg-white/85 backdrop-blur-md border-b border-stone-200 py-4 md:py-5">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-      <div class="flex-1 flex justify-start items-center">
-        <h1 class="m-0 p-0 leading-none">
-          <a href="#home" data-route="home-top" class="text-xl font-serif tracking-[0.15em] whitespace-nowrap text-[#1B2A47] leading-none" title="有限会社やまなみ銘石 ホームへ">
-            <span class="sr-only">天然石の加工・原石・屋久杉販売店｜</span>有限会社やまなみ銘石
-          </a>
-        </h1>
-      </div>
-      <div class="flex-none flex justify-end">
-        <button id="menu-btn" class="p-2 text-stone-800 hover:opacity-50 transition-opacity" aria-label="メニューを開く">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
-        </button>
-      </div>
-    </div>
-  </header>
+<!-- HEADER -->
+<header class="header-fixed fixed top-0 left-0 right-0 z-50 transition-colors duration-700 bg-white/85 backdrop-blur-md border-b border-stone-200 py-4 md:py-5">
+<div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+<div class="flex-1 flex justify-start items-center">
+<h1 class="m-0 p-0 leading-none">
+<a href="#home" data-route="home-top" class="text-xl font-serif tracking-[0.15em] whitespace-nowrap text-[#1B2A47] leading-none" title="有限会社やまなみ銘石 ホームへ">
+<span class="sr-only">天然石の加工・原石・屋久杉販売店｜</span>有限会社やまなみ銘石
+</a>
+</h1>
+</div>
+<div class="flex-none flex justify-end">
+<button id="menu-btn" class="p-2 text-stone-800 hover:opacity-50 transition-opacity" aria-label="メニューを開く">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+</button>
+</div>
+</div>
+</header>
 
   <!-- HOME VIEW -->
   <div id="home-view">
@@ -274,6 +278,7 @@
                   <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/tw7.jpg" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
                   <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/tw8.jpg" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
                 </div>
+                <!-- 省略せずに同じものを繰り返す -->
                 <div class="flex gap-4">
                   <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/tw1.jpg" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
                   <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/tw2.jpg" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
@@ -422,6 +427,7 @@
           </div>
 
           <div class="space-y-0 fade-in delay-100 faq-list">
+            <!-- FAQ アイテム -->
             <div class="border-b border-stone-200 accordion-group">
               <button class="accordion-btn w-full py-4 md:py-5 flex items-center justify-between text-left focus:outline-none group">
                 <div class="font-serif text-stone-800 text-[14px] md:text-[15px] flex-1 pr-8 tracking-widest">Q. 屋久杉製品は本物の屋久杉ですか？</div>
@@ -436,6 +442,7 @@
                 </div>
               </div>
             </div>
+            <!-- 他のFAQも同様に配置 -->
             <div class="border-b border-stone-200 accordion-group">
               <button class="accordion-btn w-full py-4 md:py-5 flex items-center justify-between text-left focus:outline-none group">
                 <div class="font-serif text-stone-800 text-[14px] md:text-[15px] flex-1 pr-8 tracking-widest">Q. 写真と実物の色味が違うことはありますか？</div>
@@ -567,7 +574,7 @@
           </div>
           
           <div class="bg-white p-8 md:p-16 shadow-[0_2px_20px_rgba(0,0,0,0.04)] border border-stone-200 fade-in delay-200">
-            <!-- formタグのactionは使用せず、JSで処理します -->
+            <!-- フォーム（JSで処理します） -->
             <form id="contact-form" class="space-y-8">
               
               <!-- 名前 -->
@@ -613,7 +620,7 @@
                 </label>
               </div>
 
-              <!-- ご安心いただくための事前案内 ＋ 画像ベタ貼り（下線追加版） -->
+              <!-- ご安心いただくための事前案内 ＋ 画像ベタ貼り -->
               <div class="mt-8 p-6 bg-stone-50 border border-stone-200 rounded text-left">
                 <h4 class="text-[12px] font-medium text-stone-700 mb-2">【お写真の添付について】</h4>
                 
@@ -627,7 +634,6 @@
                   <img src="/assets/rei.jpg" alt="完成イメージの例" class="w-full max-w-[280px] mx-auto rounded-md shadow-sm border border-stone-200 object-cover">
                 </div>
 
-                <!-- ほどよく目立つ上品な下線を引きました -->
                 <p class="text-[11px] text-stone-600 leading-relaxed mb-6">
                   <span class="underline decoration-stone-400 underline-offset-4">お写真をお送りいただく場合は、上記を記入後、下のボタンからメールを起動し、メールの作成画面にて画像を添付してご送信ください。</span>
                 </p>
@@ -955,17 +961,6 @@
     document.getElementById('copyright-year').innerHTML = '&copy; ' + new Date().getFullYear() + ' YAMANAMI MEISEKI. All rights reserved.';
   </script>
 
-<!-- ==========================================
-       JSエラー回避用のダミー要素
-       main.jsが古いフォームの要素を探してエラーになるのを防ぎます
-       ========================================== -->
-  <div style="display: none;" aria-hidden="true">
-    <button id="submit-btn"></button>
-    <span id="open-rei-img"></span>
-    <input type="file">
-    <input type="email" name="email">
-  </div>
-
   <!-- メールアプリを起動するためのJavaScript -->
   <script>
     function openMailApp() {
@@ -987,7 +982,7 @@
       // 掲載許可の表示用テキスト
       const publishText = isPublish ? "許可する" : "許可しない";
   
-      // 送信先のメールアドレス
+      // 送信先のメールアドレス（特商法に記載のメールアドレスを設定しています）
       const mailTo = "info@ishiya-san.com"; 
   
       // メールの件名
