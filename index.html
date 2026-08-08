@@ -964,7 +964,7 @@
     document.getElementById('copyright-year').innerHTML = '&copy; ' + new Date().getFullYear() + ' YAMANAMI MEISEKI. All rights reserved.';
   </script>
 
-  <!-- メールアプリ起動用のスクリプト -->
+<!-- メールアプリ起動用のスクリプト -->
   <script>
     function openMailApp() {
       const form = document.getElementById('contact-form');
@@ -985,15 +985,18 @@
   
       const subject = `【お問い合わせ】${category}（${name}様）`;
   
-      const body = `お名前：${name} 様
-お問い合わせの種類：${category}
-画像掲載の許可：${publishText}
-  
-■お問い合わせ内容
+      // ▼ ここがメール本文のフォーマットです ▼
+      const body = `【お名前】
+${name}
+【ご希望のカテゴリー】
+${category}
+【過去の加工一覧への画像掲載】
+${publishText}
+【お問い合わせ内容】
 ${message}
-  
------------------------------------------
-※画像の添付がある場合は、このメールに添付した上で送信してください。`;
+
+------------------------------------------------
+※対象の石のお写真などがある場合は、このメールにそのまま画像を添付して送信をお願いいたします。`;
   
       const mailtoUrl = `mailto:${mailTo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   
