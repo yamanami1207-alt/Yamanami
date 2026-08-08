@@ -984,47 +984,5 @@
   <script>
     document.getElementById('copyright-year').innerHTML = '&copy; ' + new Date().getFullYear() + ' YAMANAMI MEISEKI. All rights reserved.';
   </script>
-<script>
-      function openMailApp() {
-        const name = document.getElementById('input-name').value;
-        const categorySelect = document.getElementById('input-category');
-        const category = categorySelect.value;
-        const message = document.getElementById('input-message').value;
-        const isPublishAllowed = document.getElementById('input-publish').checked ? "許可する" : "許可しない";
-
-        if (!name || !category || !message) {
-          alert("「お名前」「カテゴリー」「お問い合わせ内容」を入力してください。");
-          return;
-        }
-
-        // 送信先メールアドレスを設定
-        const mailTo = "info@ishiya-san.com";
-        const subject = category;
-
-        // %0D%0A はメールアプリ上で「改行」として認識される確実なコードです
-        // これを2つ連続で入れることで、きれいな空白行（余白）を作ります
-        const br = "%0D%0A";
-        const br2 = "%0D%0A%0D%0A";
-
-        // メールの本文（改行コードを使って隙間をあけています）
-        const body = 
-          "【お名前】" + br +
-          name + " 様" + br2 +
-          "【ご希望のカテゴリー】" + br +
-          category + br2 +
-          "【過去の加工一覧への画像掲載】" + br +
-          isPublishAllowed + br2 +
-          "【お問い合わせ内容】" + br +
-          message + br2 +
-          "------------------------------------------------" + br +
-          "※対象の石のお写真などがある場合は、このメールにそのまま画像を添付して送信をお願いいたします。";
-
-        // mailtoリンクの生成（日本語部分のみ安全にエンコード）
-        const mailtoLink = `mailto:${mailTo}?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-        // メールアプリを起動
-        window.location.href = mailtoLink;
-      }
-      </script>
 </body>
 </html>
