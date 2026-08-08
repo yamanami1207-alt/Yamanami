@@ -955,6 +955,17 @@
     document.getElementById('copyright-year').innerHTML = '&copy; ' + new Date().getFullYear() + ' YAMANAMI MEISEKI. All rights reserved.';
   </script>
 
+<!-- ==========================================
+       JSエラー回避用のダミー要素
+       main.jsが古いフォームの要素を探してエラーになるのを防ぎます
+       ========================================== -->
+  <div style="display: none;" aria-hidden="true">
+    <button id="submit-btn"></button>
+    <span id="open-rei-img"></span>
+    <input type="file">
+    <input type="email" name="email">
+  </div>
+
   <!-- メールアプリを起動するためのJavaScript -->
   <script>
     function openMailApp() {
