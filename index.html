@@ -103,7 +103,6 @@
   <!-- Loading Overlay -->
   <div id="loader" class="fixed inset-0 z-[100] bg-[#fdfdfc] flex items-center justify-center overflow-hidden transition-opacity duration-800 ease-in-out">
     <div id="loader-content" class="flex flex-col items-center justify-center" style="transform: scale(15);">
-      <!-- 起動時のロゴと文字を大きくする -->
       <img src="/assets/logo.png" alt="Yamanami Meiseki Logo" class="w-32 h-32 md:w-56 md:h-56 object-contain mb-8 loader-circle">
       <p class="text-[14px] md:text-[18px] tracking-[0.4em] font-serif text-[#1B2A47] whitespace-nowrap opacity-0 loader-text">SINCE 1990</p>
     </div>
@@ -136,7 +135,6 @@
     </div>
   </div>
 
-<!-- ... existing code ... -->
 <!-- HEADER -->
 <header class="header-fixed fixed top-0 left-0 right-0 z-50 transition-colors duration-700 bg-white/85 backdrop-blur-md border-b border-stone-200 py-4 md:py-5">
 <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -154,7 +152,6 @@
 </div>
 </div>
 </header>
-<!-- ... existing code ... -->
 
   <!-- HOME VIEW -->
   <div id="home-view">
@@ -271,7 +268,6 @@
               <div class="absolute inset-y-0 right-0 w-8 md:w-32 z-10 pointer-events-none" style="background: linear-gradient(to left, white, transparent)"></div>
               <div class="marquee-scroll-wrapper overflow-x-auto no-scrollbar w-full flex">
                 <div class="marquee-container gap-4 px-4">
-                <!-- duplicated multiple times for seamless tracking -->
                 <div class="flex gap-4">
                   <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/tw1.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none" alt="" loading="lazy"></div>
                   <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/tw2.jpg" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
@@ -282,6 +278,7 @@
                   <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/tw7.jpg" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
                   <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/tw8.jpg" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
                 </div>
+                <!-- 省略せずに同じものを繰り返す -->
                 <div class="flex gap-4">
                   <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/tw1.jpg" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
                   <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/tw2.jpg" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
@@ -348,36 +345,25 @@
             <div class="absolute inset-y-0 right-0 w-8 md:w-32 z-10 pointer-events-none" style="background: linear-gradient(to left, white, transparent)"></div>
             <div class="marquee-scroll-wrapper overflow-x-auto no-scrollbar w-full flex">
               <div class="marquee-container gap-4 px-4">
-                <!-- duplicated for seamless tracking -->
                 <div class="flex gap-4">
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none" alt="お客様が作成された天然石オリジナルブレスレットの作例1" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc2.png" class="w-full h-full object-cover pointer-events-none" alt="オーダーメイドで作成できる天然石ブレスレットの完成イメージ2" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc3.png" class="w-full h-full object-cover pointer-events-none" alt="お客様が作成された天然石オリジナルブレスレットの作例3" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc4.png" class="w-full h-full object-cover pointer-events-none" alt="オーダーメイドで作成できる天然石ブレスレットの完成イメージ4" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc5.png" class="w-full h-full object-cover pointer-events-none" alt="お客様が作成された天然石オリジナルブレスレットの作例5" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc6.png" class="w-full h-full object-cover pointer-events-none" alt="オーダーメイドで作成できる天然石ブレスレットの完成イメージ6" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc7.png" class="w-full h-full object-cover pointer-events-none" alt="お客様が作成された天然石オリジナルブレスレットの作例7" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc8.png" class="w-full h-full object-cover pointer-events-none" alt="オーダーメイドで作成できる天然石ブレスレットの完成イメージ8" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none" alt="" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc2.png" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc3.png" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc4.png" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc5.png" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc6.png" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc7.png" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc8.png" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
                 </div>
                 <div class="flex gap-4">
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc1.png" class="w-full h-full object-cover pointer-events-none" alt="お客様が作成された天然石オリジナルブレスレットの作例1" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc2.png" class="w-full h-full object-cover pointer-events-none" alt="オーダーメイドで作成できる天然石ブレスレットの完成イメージ2" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc3.png" class="w-full h-full object-cover pointer-events-none" alt="お客様が作成された天然石オリジナルブレスレットの作例3" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc4.png" class="w-full h-full object-cover pointer-events-none" alt="オーダーメイドで作成できる天然石ブレスレットの完成イメージ4" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc5.png" class="w-full h-full object-cover pointer-events-none" alt="お客様が作成された天然石オリジナルブレスレットの作例5" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc6.png" class="w-full h-full object-cover pointer-events-none" alt="オーダーメイドで作成できる天然石ブレスレットの完成イメージ6" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc7.png" class="w-full h-full object-cover pointer-events-none" alt="お客様が作成された天然石オリジナルブレスレットの作例7" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc8.png" class="w-full h-full object-cover pointer-events-none" alt="オーダーメイドで作成できる天然石ブレスレットの完成イメージ8" loading="lazy"></div>
-                </div>
-                <div class="flex gap-4">
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc1.png" class="w-full h-full object-cover pointer-events-none" alt="お客様が作成された天然石オリジナルブレスレットの作例1" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc2.png" class="w-full h-full object-cover pointer-events-none" alt="オーダーメイドで作成できる天然石ブレスレットの完成イメージ2" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc3.png" class="w-full h-full object-cover pointer-events-none" alt="お客様が作成された天然石オリジナルブレスレットの作例3" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc4.png" class="w-full h-full object-cover pointer-events-none" alt="オーダーメイドで作成できる天然石ブレスレットの完成イメージ4" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc5.png" class="w-full h-full object-cover pointer-events-none" alt="お客様が作成された天然石オリジナルブレスレットの作例5" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc6.png" class="w-full h-full object-cover pointer-events-none" alt="オーダーメイドで作成できる天然石ブレスレットの完成イメージ6" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc7.png" class="w-full h-full object-cover pointer-events-none" alt="お客様が作成された天然石オリジナルブレスレットの作例7" loading="lazy"></div>
-                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc8.png" class="w-full h-full object-cover pointer-events-none" alt="オーダーメイドで作成できる天然石ブレスレットの完成イメージ8" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc1.png" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc2.png" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc3.png" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc4.png" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc5.png" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc6.png" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc7.png" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
+                  <div class="w-32 h-32 md:w-48 md:h-48 overflow-hidden flex-shrink-0 relative group rounded-sm shadow-sm gallery-image"><img src="/assets/brc8.png" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></div>
                 </div>
               </div>
             </div>
@@ -419,11 +405,9 @@
             <p class="text-3xl font-serif tracking-[0.1em] indent-[0.1em] text-[#1B2A47]">ブログ</p>
           </div>
           <div id="blog-container" class="space-y-6 fade-in delay-100">
-            <!-- MicroCMS Blog items will be rendered here -->
             <div class="text-center text-stone-400 text-sm py-8" id="blog-loading">読み込み中...</div>
           </div>
           <div id="all-blogs-container" class="space-y-6 mt-6 hidden fade-in delay-200">
-            <!-- Older blogs will be appended here -->
           </div>
           <div class="text-center mt-12 fade-in delay-200">
             <a href="#" id="view-all-blogs-btn" class="hidden inline-flex items-center gap-4 text-[11px] tracking-[0.2em] px-12 py-5 border border-stone-300 text-stone-600 hover:border-[#1B2A47] hover:bg-[#1B2A47] hover:text-white transition-colors duration-500">
@@ -443,6 +427,7 @@
           </div>
 
           <div class="space-y-0 fade-in delay-100 faq-list">
+            <!-- FAQ アイテム -->
             <div class="border-b border-stone-200 accordion-group">
               <button class="accordion-btn w-full py-4 md:py-5 flex items-center justify-between text-left focus:outline-none group">
                 <div class="font-serif text-stone-800 text-[14px] md:text-[15px] flex-1 pr-8 tracking-widest">Q. 屋久杉製品は本物の屋久杉ですか？</div>
@@ -457,7 +442,7 @@
                 </div>
               </div>
             </div>
-            <!-- Acc 2 -->
+            <!-- 他のFAQも同様に配置 -->
             <div class="border-b border-stone-200 accordion-group">
               <button class="accordion-btn w-full py-4 md:py-5 flex items-center justify-between text-left focus:outline-none group">
                 <div class="font-serif text-stone-800 text-[14px] md:text-[15px] flex-1 pr-8 tracking-widest">Q. 写真と実物の色味が違うことはありますか？</div>
@@ -472,7 +457,6 @@
                 </div>
               </div>
             </div>
-            <!-- Acc 3 -->
             <div class="border-b border-stone-200 accordion-group">
               <button class="accordion-btn w-full py-4 md:py-5 flex items-center justify-between text-left focus:outline-none group">
                 <div class="font-serif text-stone-800 text-[14px] md:text-[15px] flex-1 pr-8 tracking-widest">Q. 天然石、原石のお手入れはどうすればいいですか？</div>
@@ -487,7 +471,6 @@
                 </div>
               </div>
             </div>
-            <!-- Acc 4 -->
             <div class="border-b border-stone-200 accordion-group">
               <button class="accordion-btn w-full py-4 md:py-5 flex items-center justify-between text-left focus:outline-none group">
                 <div class="font-serif text-stone-800 text-[14px] md:text-[15px] flex-1 pr-8 tracking-widest">Q. クレジットカードや電子決済は使えますか？</div>
@@ -498,10 +481,10 @@
               </button>
               <div class="accordion-content">
                 <div class="pb-5 text-[13px] md:text-sm font-light text-stone-600 leading-[2.2] tracking-wide">
-                  A. はい、ご利用いただけます。クレジットカード他、PayPayなどの各種キャッシュレス決済もご利用いただけます。<br>                </div>
+                  A. はい、ご利用いただけます。クレジットカード他、PayPayなどの各種キャッシュレス決済もご利用いただけます。
+                </div>
               </div>
             </div>
-            <!-- Acc 5 -->
             <div class="border-b border-stone-200 accordion-group">
               <button class="accordion-btn w-full py-4 md:py-5 flex items-center justify-between text-left focus:outline-none group">
                 <div class="font-serif text-stone-800 text-[14px] md:text-[15px] flex-1 pr-8 tracking-widest">Q. ゴムが切れてしまった場合、修理はお願いできますか？</div>
@@ -516,7 +499,6 @@
                 </div>
               </div>
             </div>
-            <!-- Acc 6 -->
             <div class="border-b border-stone-200 accordion-group">
               <button class="accordion-btn w-full py-4 md:py-5 flex items-center justify-between text-left focus:outline-none group">
                 <div class="font-serif text-stone-800 text-[14px] md:text-[15px] flex-1 pr-8 tracking-widest">Q. 注文から発送までどのくらいかかりますか？</div>
@@ -540,7 +522,7 @@
               <div class="text-left space-y-6">
                 <h4 class="text-lg font-serif text-[#1B2A47] mb-6">有限会社やまなみ銘石 <span class="text-[11px] font-sans text-stone-400">本店</span></h4>
                 <div class="w-full aspect-[3/2] mb-2 overflow-hidden rounded bg-stone-100">
-                  <img src="/assets/mise1.jpg" alt="大阪・石切神社参道にある天然石専門店『有限会社やまなみ銘石』の店舗外観" class="w-full h-full object-cover pointer-events-none">
+                  <img src="/assets/mise1.jpg" alt="店舗外観" class="w-full h-full object-cover pointer-events-none">
                 </div>
                 <div class="w-full aspect-[3/2] mb-4 overflow-hidden rounded bg-stone-100">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.957997931086!2d135.64415841523178!3d34.68097958043965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600120b080470fc3%3A0xf69562ac19db8b89!2z44CSNTc5LTgwMTEg5aSn6Ziq5bqc5p2x5aSn6Ziq5biC5p2x55-z5YiH55S677yR5LiB55uu77yV4oiS77yR!5e0!3m2!1sja!2sjp!4v1683884747209!5m2!1sja!2sjp" width="100%" height="100%" style="border:0" loading="lazy" class="opacity-90"></iframe>
@@ -561,7 +543,7 @@
               <div class="text-left space-y-6">
                 <h4 class="text-lg font-serif text-[#1B2A47] mb-6">石乃珠企画 <span class="text-[11px] font-sans text-stone-400">支店</span></h4>
                 <div class="w-full aspect-[3/2] mb-2 overflow-hidden rounded bg-stone-100">
-                  <img src="/assets/mise2.jpg" alt="大阪 船場の天然石のお店 石乃珠企画 の様子" class="w-full h-full object-cover pointer-events-none">
+                  <img src="/assets/mise2.jpg" alt="店舗外観" class="w-full h-full object-cover pointer-events-none">
                 </div>
                 <div class="w-full aspect-[3/2] mb-4 overflow-hidden rounded bg-stone-100">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.0827103138377!2d135.5005886!3d34.6778438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e7195f22e847%3A0x8bd1a1cfd076f7f6!2z5oSP6KaL6KaL6KaL6KaLIeiIueWgt-OCu-ODs-OCv-ODvOODk-ODqyA45Y-36aSo!5e0!3m2!1sja!2sjp!4v1683884747209!5m2!1sja!2sjp" width="100%" height="100%" style="border:0" loading="lazy" class="opacity-90"></iframe>
@@ -592,20 +574,21 @@
           </div>
           
           <div class="bg-white p-8 md:p-16 shadow-[0_2px_20px_rgba(0,0,0,0.04)] border border-stone-200 fade-in delay-200">
+            <!-- フォーム（JSで処理します） -->
             <form id="contact-form" class="space-y-8">
+              
+              <!-- 名前 -->
               <div class="space-y-2">
                 <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase">Name</label>
-                <input type="text" name="name" placeholder="お名前" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors placeholder:text-stone-300" required>
+                <input type="text" id="input-name" placeholder="お名前" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors placeholder:text-stone-300" required>
               </div>
-              <div class="space-y-2">
-                <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase">Email</label>
-                <input type="email" name="email" placeholder="メールアドレス" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors placeholder:text-stone-300" required>
-              </div>
+
+              <!-- カテゴリー -->
               <div class="space-y-2 relative">
                 <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase">Category</label>
                 <div class="relative">
-                  <select name="category" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors appearance-none cursor-pointer text-stone-400">
-                    <option value="" disabled selected>選択してください</option>
+                  <select id="input-category" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors appearance-none cursor-pointer text-stone-600" required>
+                    <option value="" disabled selected class="text-stone-300">選択してください</option>
                     <option value="天然石の加工（穴あけ・研磨・彫刻など）について">天然石の加工（穴あけ・研磨・彫刻など）について</option>
                     <option value="法人様向けOEM・大口注文について">法人様向けOEM・大口注文について</option>
                     <option value="ブレスレットの修理・サイズ直しについて">ブレスレットの修理・サイズ直しについて</option>
@@ -615,19 +598,11 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </div>
               </div>
+
+              <!-- メッセージ -->
               <div class="space-y-2">
                 <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase">Message</label>
-                <textarea name="message" placeholder="お問い合わせ内容" rows="4" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors resize-y placeholder:text-stone-300" required></textarea>
-              </div>
-              <div class="space-y-2">
-                <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase">Attachment (Photo)</label>
-                <p class="text-[11px] text-stone-500 leading-relaxed mt-1 normal-case tracking-normal font-light">
-                  加工のご相談、ご依頼の際、対象の石のお写真を添付していただけますと、よりスムーズなご案内が可能となります。<span class="cursor-pointer text-stone-500 hover:text-stone-800 transition-colors border-b border-stone-300 pb-0.5" id="open-rei-img">（イメージ）</span><br>
-                  また、手書きで構いませんので、簡単な図解や完成イメージのお写真も併せて送付いただけますと幸いでございます。
-                </p>
-                <div class="relative py-4 border-b border-stone-300">
-                  <input type="file" accept="image/*" multiple class="block w-full text-sm text-stone-500 file:mr-4 file:py-2.5 file:px-6 file:rounded-none file:border-0 file:text-[10px] file:font-light file:tracking-[0.1em] file:bg-[#1B2A47] file:text-white hover:file:bg-[#1B2A47]/80 file:cursor-pointer file:transition-colors focus:outline-none">
-                </div>
+                <textarea id="input-message" placeholder="お問い合わせ内容" rows="4" class="w-full py-4 bg-transparent border-b border-stone-300 text-sm focus:outline-none focus:border-stone-800 transition-colors resize-y placeholder:text-stone-300" required></textarea>
               </div>
               
               <!-- 掲載許可チェックボックス -->
@@ -635,7 +610,7 @@
                 <label class="block text-[10px] tracking-[0.1em] text-stone-400 uppercase mb-4">Publication</label>
                 <label class="flex items-start gap-4 cursor-pointer group">
                   <div class="relative flex items-center justify-center w-5 h-5 mt-0.5 flex-shrink-0">
-                    <input type="checkbox" name="allow_publish" value="yes" checked class="peer appearance-none w-5 h-5 border border-stone-300 bg-transparent checked:bg-[#1B2A47] checked:border-[#1B2A47] transition-colors cursor-pointer">
+                    <input type="checkbox" id="input-publish" checked class="peer appearance-none w-5 h-5 border border-stone-300 bg-transparent checked:bg-[#1B2A47] checked:border-[#1B2A47] transition-colors cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="absolute text-white opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
                   <div class="flex-1 text-left">
@@ -645,16 +620,44 @@
                 </label>
               </div>
 
-              <div class="pt-10 text-center flex justify-center">
-                <button type="button" id="submit-btn" disabled class="inline-flex items-center justify-center gap-4 text-[11px] tracking-[0.2em] px-12 py-5 border border-stone-300 text-stone-300 transition-colors duration-500 cursor-not-allowed w-full sm:w-auto min-w-[240px]">
-                  送信する
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <!-- ご安心いただくための事前案内 ＋ 画像ベタ貼り -->
+              <div class="mt-8 p-6 bg-stone-50 border border-stone-200 rounded text-left">
+                <h4 class="text-[12px] font-medium text-stone-700 mb-2">【お写真の添付について】</h4>
+                
+                <p class="text-[11px] text-stone-600 leading-relaxed mb-4">
+                  加工のご相談、ご依頼の際、対象の石のお写真を添付していただけますと、よりスムーズなご案内が可能となります。<br>
+                  また、手書きで構いませんので、簡単な図解や完成イメージのお写真も併せて送付いただけますと幸いでございます。
+                </p>
+
+                <!-- ベタ貼りの画像 -->
+                <div class="my-6 text-center">
+                  <img src="/assets/rei.jpg" alt="完成イメージの例" class="w-full max-w-[280px] mx-auto rounded-md shadow-sm border border-stone-200 object-cover">
+                </div>
+
+                <p class="text-[11px] text-stone-600 leading-relaxed mb-6">
+                  <span class="underline decoration-stone-400 underline-offset-4">お写真をお送りいただく場合は、上記を記入後、下のボタンからメールを起動し、メールの作成画面にて画像を添付してご送信ください。</span>
+                </p>
+
+                <h4 class="text-[12px] font-medium text-stone-700 mb-2">※画面切り替え時のご注意</h4>
+                <p class="text-[11px] text-stone-600 leading-relaxed">
+                  ボタンを押した際、「アプリの切り替えを許可しますか？」という確認や、「%E3...」といった英数字の羅列が表示される場合があります。<br>
+                  これらは入力内容をメールへ引き継ぐための正常な仕組みですので、そのまま「許可」または「開く」を押してお進みください。
+                </p>
+              </div>
+
+              <!-- 送信ボタン -->
+              <div class="pt-6 text-center flex justify-center">
+                <button type="button" onclick="openMailApp()" class="inline-flex items-center justify-center gap-4 text-[12px] tracking-[0.2em] px-12 py-5 bg-[#1B2A47] text-white hover:bg-[#2c4069] transition-colors duration-300 w-full sm:w-auto min-w-[280px] shadow-sm">
+                  メールを起動する
+                  <!-- 外部アプリ起動を示すアイコン -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                 </button>
               </div>
             </form>
           </div>
         </div>
       </section>
+
     </main>
   </div>
 
@@ -670,7 +673,6 @@
       <h1 class="text-3xl md:text-4xl font-serif indent-[0.1em] text-stone-800 tracking-[0.1em]">加工の詳細</h1>
     </div>
 
-    <!-- ここに加工内容をすべて「中央揃えタイトル」→「画像」→「詳細」の縦積みに直した構造を入れます（画像は全カラー表示） -->
     <div class="space-y-40">
       
       <!-- 1 -->
@@ -679,16 +681,15 @@
         <div class="w-full mb-10 group relative slider-component overflow-hidden rounded-sm">
           <div class="flex w-full slides-container will-change-transform">
             <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-              <img src="/assets/pen1.png" alt="自社工房での天然石アクセサリー・ペンダント加工のビフォーアフター事例1" class="w-full h-full object-contain">
+              <img src="/assets/pen1.png" alt="事例1" class="w-full h-full object-contain">
             </div>
             <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-              <img src="/assets/pen2.png" alt="自社工房での天然石アクセサリー・ペンダント加工のビフォーアフター事例2" class="w-full h-full object-contain">
+              <img src="/assets/pen2.png" alt="事例2" class="w-full h-full object-contain">
             </div>
             <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-              <img src="/assets/pen3.png" alt="自社工房での天然石アクセサリー・ペンダント加工のビフォーアフター事例3" class="w-full h-full object-contain">
+              <img src="/assets/pen3.png" alt="事例3" class="w-full h-full object-contain">
             </div>
           </div>
-          <!-- Dots -->
           <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 dots-container z-10">
             <button class="w-2 h-2 rounded-full bg-white opacity-100 transition-opacity slider-dot"></button>
             <button class="w-2 h-2 rounded-full bg-white opacity-40 hover:opacity-100 transition-opacity slider-dot"></button>
@@ -715,7 +716,7 @@
         <div class="w-full mb-10 group relative slider-component overflow-hidden rounded-sm">
           <div class="flex w-full slides-container will-change-transform">
             <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-              <img src="/assets/tyo1.jpg" alt="自社工房での天然石への彫刻加工（文字入れ・模様刻印）の事例" class="w-full h-full object-contain">
+              <img src="/assets/tyo1.jpg" alt="事例" class="w-full h-full object-contain">
             </div>
           </div>
         </div>
@@ -738,7 +739,6 @@
               <p class="text-[11px] text-stone-400 mt-4 leading-relaxed">※画像データまたは原画をご用意ください。<br />※初回のみ、版代として別途 ¥5,000 を頂戴いたします。</p>
             </div>
           </div>
-          <!-- ご注意：ボーダーだけ残し、paddingを大幅に削り、上のリストからスムーズに繋がるように -->
           <div class="text-[12px] text-stone-500 leading-[2.2] border-l border-stone-300 pl-4 mt-8 mx-auto text-left max-w-full">
             <span class="text-stone-800 font-serif mb-2 block tracking-widest text-[11px]">彫刻加工についてのご注意</span>
             <ul class="space-y-1">
@@ -756,13 +756,12 @@
         <div class="w-full mb-10 group relative slider-component overflow-hidden rounded-sm">
           <div class="flex w-full slides-container will-change-transform">
             <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-              <img src="/assets/ana1.png" alt="自社工房での天然石ビーズの穴あけ・拡張加工の事例1" class="w-full h-full object-contain">
+              <img src="/assets/ana1.png" alt="事例1" class="w-full h-full object-contain">
             </div>
             <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-              <img src="/assets/ana2.png" alt="自社工房での天然石ビーズの穴あけ・拡張加工の事例2" class="w-full h-full object-contain">
+              <img src="/assets/ana2.png" alt="事例2" class="w-full h-full object-contain">
             </div>
           </div>
-          <!-- Dots -->
           <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 dots-container z-10">
             <button class="w-2 h-2 rounded-full bg-white opacity-100 transition-opacity slider-dot"></button>
             <button class="w-2 h-2 rounded-full bg-white opacity-40 hover:opacity-100 transition-opacity slider-dot"></button>
@@ -795,16 +794,15 @@
         <div class="w-full mb-10 group relative slider-component overflow-hidden rounded-sm">
           <div class="flex w-full slides-container will-change-transform">
             <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-              <img src="/assets/ken1.png" alt="自社工房での原石の切断・研磨加工の事例1" class="w-full h-full object-contain">
+              <img src="/assets/ken1.png" alt="事例1" class="w-full h-full object-contain">
             </div>
             <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-              <img src="/assets/ken2.png" alt="自社工房での原石の切断・研磨加工の事例2" class="w-full h-full object-contain">
+              <img src="/assets/ken2.png" alt="事例2" class="w-full h-full object-contain">
             </div>
             <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-              <img src="/assets/ken3.png" alt="自社工房での原石の切断・研磨加工の事例3" class="w-full h-full object-contain">
+              <img src="/assets/ken3.png" alt="事例3" class="w-full h-full object-contain">
             </div>
           </div>
-          <!-- Dots -->
           <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 dots-container z-10">
             <button class="w-2 h-2 rounded-full bg-white opacity-100 transition-opacity slider-dot"></button>
             <button class="w-2 h-2 rounded-full bg-white opacity-40 hover:opacity-100 transition-opacity slider-dot"></button>
@@ -961,6 +959,52 @@
 
   <script>
     document.getElementById('copyright-year').innerHTML = '&copy; ' + new Date().getFullYear() + ' YAMANAMI MEISEKI. All rights reserved.';
+  </script>
+
+  <!-- メールアプリを起動するためのJavaScript -->
+  <script>
+    function openMailApp() {
+      // フォーム要素を取得
+      const form = document.getElementById('contact-form');
+      
+      // HTMLのrequired属性（必須入力）のチェックを実行
+      // 未入力があればブラウザ標準のエラーメッセージを出し、処理を中断する
+      if (!form.reportValidity()) {
+        return;
+      }
+  
+      // 各入力項目の値を取得
+      const name = document.getElementById('input-name').value;
+      const category = document.getElementById('input-category').value;
+      const message = document.getElementById('input-message').value;
+      const isPublish = document.getElementById('input-publish').checked;
+      
+      // 掲載許可の表示用テキスト
+      const publishText = isPublish ? "許可する" : "許可しない";
+  
+      // 送信先のメールアドレス（特商法に記載のメールアドレスを設定しています）
+      const mailTo = "info@ishiya-san.com"; 
+  
+      // メールの件名
+      const subject = `【お問い合わせ】${category}（${name}様）`;
+  
+      // メールの本文を作成
+      const body = `お名前：${name} 様
+お問い合わせの種類：${category}
+画像掲載の許可：${publishText}
+  
+■お問い合わせ内容
+${message}
+  
+-----------------------------------------
+※画像の添付がある場合は、このメールに添付した上で送信してください。`;
+  
+      // メーラーを起動するためのURL（mailto:）を作成
+      const mailtoUrl = `mailto:${mailTo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  
+      // メーラーを起動
+      window.location.href = mailtoUrl;
+    }
   </script>
 </body>
 </html>
