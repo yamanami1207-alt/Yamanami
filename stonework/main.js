@@ -1,11 +1,10 @@
 import '../src/index.css';
 
+const worksSection = document.getElementById('past-works');
 const worksList = document.getElementById('works-list');
-const worksToggle = document.getElementById('works-toggle');
+const pastWorksLink = document.getElementById('past-works-link');
 const apiKey = import.meta.env.VITE_MICROCMS_API_KEY;
-const initialCount = 3;
-let allWorks = [];
-let showAll = window.location.hash === '#works';
+let worksLoaded = false;
 
 const escapeHtml = (value = '') => String(value)
   .replaceAll('&', '&amp;')
@@ -19,77 +18,46 @@ const formatDate = (value) => {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return '';
   return date.toLocaleDateString('ja-JP', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
+    year: 'numeric', month: '2-digit', day: '2-digit',
   }).replace(/\//g, '.');
 };
 
 const imageMarkup = (image, label, stoneType) => {
-  if (!image?.url) return '';
-  const alt = `${stoneType || '天然石'}の${label}写真｜STONEWORK`;
-  return `<figure class="flex flex-col gap-3">
-    <figcaption class="text-[10px] tracking-[0.16em] text-stone-400 bg-white self-start px-2 py-1 rounded-sm">${label}</figcaption>
-    <img src="${escapeHtml(image.url)}?w=1200" class="w-full h-auto rounded-sm object-cover bg-white" loading="lazy" alt="${escapeHtml(alt)}">
-  </figure>`;
+  if (!image?.url) return '<div></div>';
+  const alt = `${stoneType || '天然石'}の${label}写真｜過去の加工一覧`;
+  return `<div class="flex flex-col gap-2">
+    <span class="text-[10px] tracking-widest text-stone-400 bg-stone-100 self-start px-2 py-1 rounded-sm">${label}</span>
+    <img src="${escapeHtml(image.url)}?w=1000" class="w-full h-auto rounded-sm object-cover aspect-video bg-stone-100" loading="lazy" alt="${escapeHtml(alt)}">
+  </div>`;
 };
 
-const renderWork = (work, index) => {
+const renderWork = (work) => {
   const dateValue = work.date || work.publishedAt || work.createdAt;
   const date = formatDate(dateValue);
-  const stoneType = escapeHtml(work.stone_type || work.title || '天然石加工事例');
-  const processingType = escapeHtml(work.processing_type || '天然石加工');
+  const stoneType = escapeHtml(work.stone_type || work.title || '加工実績');
   const images = work.image_before || work.image_after
-    ? `<div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-8">${imageMarkup(work.image_before, 'BEFORE 加工前', stoneType)}${imageMarkup(work.image_after, 'AFTER 加工後', stoneType)}</div>`
+    ? `<div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-6 mt-8">${imageMarkup(work.image_before, 'BEFORE', stoneType)}${imageMarkup(work.image_after, 'AFTER', stoneType)}</div>`
     : '';
   const content = work.content
-    ? `<div class="blog-content text-[13px] md:text-sm font-light leading-[2.4] text-stone-600 mt-8">${work.content}</div>`
+    ? `<div class="blog-content text-[14px] leading-loose text-stone-600 max-w-none mt-6">${work.content}</div>`
     : '';
 
-  return `<article class="border-t border-stone-200 pt-10 md:pt-12 ${index === 0 ? '' : 'mt-2'}">
-    <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
-      <time class="text-[10px] tracking-[0.16em] text-stone-400" datetime="${escapeHtml(dateValue || '')}">${date}</time>
-      <span class="text-[10px] tracking-[0.16em] text-[#1B2A47] bg-white px-2 py-1 border border-stone-200">${processingType}</span>
-    </div>
-    <h3 class="text-xl md:text-2xl font-serif tracking-[0.1em] text-[#1B2A47] mt-5">${stoneType}</h3>
+  return `<article class="border-b border-stone-200 pb-12 mb-12 last:border-0 last:pb-0 last:mb-0">
+    <time class="text-[11px] font-sans text-stone-400 tracking-wider mb-2 block" datetime="${escapeHtml(dateValue || '')}">${date}</time>
+    <h3 class="text-xl font-serif tracking-widest text-[#1B2A47] mb-6 pb-4 border-b border-stone-100 block w-full max-w-md">${stoneType}</h3>
     ${images}
     ${content}
   </article>`;
 };
 
-const updateToggle = () => {
-  if (!worksToggle) return;
-  if (allWorks.length <= initialCount) {
-    worksToggle.classList.add('hidden');
-    return;
-  }
+const showWorks = async () => {
+  if (!worksSection || !worksList) return;
+  worksSection.classList.remove('hidden');
+  worksSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-  worksToggle.classList.remove('hidden');
-  worksToggle.setAttribute('aria-expanded', String(showAll));
-  worksToggle.innerHTML = showAll
-    ? '代表事例のみ表示 <span aria-hidden="true">↑</span>'
-    : 'すべての加工事例を見る <span aria-hidden="true">↓</span>';
-};
-
-const renderWorks = () => {
-  if (!worksList) return;
-  const visibleWorks = showAll ? allWorks : allWorks.slice(0, initialCount);
-  worksList.innerHTML = visibleWorks.map(renderWork).join('');
-  updateToggle();
-};
-
-const scrollToWorks = () => {
-  const worksSection = document.getElementById('works');
-  if (worksSection) {
-    setTimeout(() => worksSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
-  }
-};
-
-const loadWorks = async () => {
-  if (!worksList) return;
-
+  if (worksLoaded) return;
   if (!apiKey) {
-    worksList.innerHTML = '<p class="text-center text-sm text-stone-400 py-12">加工事例を表示する準備中です。</p>';
+    worksList.innerHTML = '<p class="text-center text-sm text-stone-400 py-8">加工事例を表示する準備中です。</p>';
     return;
   }
 
@@ -97,38 +65,87 @@ const loadWorks = async () => {
     const response = await fetch('https://yamanami.microcms.io/api/v1/works?limit=50', {
       headers: { 'X-MICROCMS-API-KEY': apiKey },
     });
-
     if (!response.ok) throw new Error('Failed to fetch works');
-    const data = await response.json();
-    allWorks = Array.isArray(data.contents) ? data.contents : [];
 
-    if (!allWorks.length) {
-      worksList.innerHTML = '<p class="text-center text-sm text-stone-400 py-12">現在、公開中の加工事例はありません。</p>';
+    const data = await response.json();
+    if (!data.contents?.length) {
+      worksList.innerHTML = '<p class="text-center text-sm text-stone-400 py-8">過去の加工事例はまだありません。</p>';
+      worksLoaded = true;
       return;
     }
 
-    renderWorks();
-    if (window.location.hash === '#works') scrollToWorks();
+    worksList.innerHTML = data.contents.map(renderWork).join('');
+    worksLoaded = true;
   } catch (error) {
     console.error('Error fetching works:', error);
-    worksList.innerHTML = '<p class="text-center text-sm text-stone-400 py-12">加工事例の読み込みに失敗しました。</p>';
+    worksList.innerHTML = '<p class="text-center text-sm text-stone-400 py-8">事例の読み込みに失敗しました。</p>';
   }
 };
 
-if (worksToggle) {
-  worksToggle.addEventListener('click', () => {
-    showAll = !showAll;
-    renderWorks();
-    if (!showAll) scrollToWorks();
+if (pastWorksLink) {
+  pastWorksLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.history.replaceState(null, '', '#past-works');
+    showWorks();
   });
 }
 
-window.addEventListener('hashchange', () => {
-  if (window.location.hash === '#works' && !showAll && allWorks.length) {
-    showAll = true;
-    renderWorks();
-    scrollToWorks();
-  }
-});
+if (window.location.hash === '#works' || window.location.hash === '#past-works') {
+  window.addEventListener('load', showWorks, { once: true });
+}
 
-loadWorks();
+const setupSliders = () => {
+  document.querySelectorAll('.slider-component').forEach((slider) => {
+    const container = slider.querySelector('.slides-container');
+    const dots = slider.querySelectorAll('.slider-dot');
+    if (!container || dots.length === 0 || container.dataset.ready) return;
+    container.dataset.ready = 'true';
+
+    const originalCount = dots.length;
+    const firstSlide = container.children[0];
+    if (!firstSlide) return;
+    container.appendChild(firstSlide.cloneNode(true));
+
+    let currentIndex = 0;
+    let timer;
+
+    const update = (index, animate = true) => {
+      container.style.transition = animate ? 'transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)' : 'none';
+      container.style.transform = `translate3d(-${index * 100}%, 0, 0)`;
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle('opacity-100', dotIndex === (index % originalCount));
+        dot.classList.toggle('opacity-40', dotIndex !== (index % originalCount));
+      });
+    };
+
+    const next = () => {
+      currentIndex += 1;
+      update(currentIndex);
+      if (currentIndex >= originalCount) {
+        window.setTimeout(() => {
+          currentIndex = 0;
+          update(currentIndex, false);
+        }, 1200);
+      }
+    };
+
+    const start = () => {
+      window.clearInterval(timer);
+      timer = window.setInterval(next, 4000);
+    };
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        update(currentIndex);
+        start();
+      });
+    });
+
+    slider.addEventListener('mouseenter', () => window.clearInterval(timer));
+    slider.addEventListener('mouseleave', start);
+    start();
+  });
+};
+
+setupSliders();
