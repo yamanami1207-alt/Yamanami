@@ -27,7 +27,7 @@ BACK
 </a>
 
 <div class="text-center mb-40 mt-12 md:mt-24 fade-in">
-<h2 class="text-xs tracking-[0.3em] indent-[0.3em] font-light text-stone-400 uppercase mb-6">Craft Details</h2>
+<h2 class="text-xs tracking-[0.3em] indent-[0.3em] font-light text-stone-400 uppercase mb-6">STONEWORK</h2>
 <h1 class="text-3xl md:text-4xl font-serif indent-[0.1em] text-stone-800 tracking-[0.1em]">加工の詳細</h1>
 </div>
 
@@ -212,15 +212,8 @@ BACK
 掲載していない加工のご相談も大歓迎です。石切本店への直接のお持ち込みも可能です。
 </p>
 
-<div class="mb-12">
-<a href="#past-works" id="past-works-link" class="inline-flex items-center gap-4 text-[11px] tracking-[0.2em] px-12 py-5 border border-stone-300 text-stone-600 hover:border-[#1B2A47] hover:bg-[#1B2A47] hover:text-white transition-colors duration-500">
-過去の加工一覧を見る
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-</a>
-</div>
-
 <div class="mt-8">
-<a href="#contact" data-route="home" class="inline-flex items-center gap-4 text-[11px] tracking-[0.2em] px-12 py-5 border border-[#1B2A47] text-[#1B2A47] hover:bg-[#1B2A47] hover:text-white transition-colors duration-500 border-b">
+<a href="/#contact" class="inline-flex items-center gap-4 text-[11px] tracking-[0.2em] px-12 py-5 border border-[#1B2A47] text-[#1B2A47] hover:bg-[#1B2A47] hover:text-white transition-colors duration-500 border-b">
 ご相談フォームへ
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 </a>
@@ -235,14 +228,20 @@ RETURN TO HOME
 
 </div> <!-- End Services View -->
 
-<section id="past-works" class="hidden bg-white border-t border-stone-200 py-32 px-6 md:px-12 scroll-mt-20" aria-labelledby="past-works-title">
+<section id="works" class="bg-white border-t border-stone-200 py-24 px-6 md:px-12 scroll-mt-24" aria-labelledby="past-works-title">
   <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-20 fade-in visible">
+    <div class="text-center mb-12">
       <h2 class="text-sm tracking-[0.3em] font-light text-stone-400 mb-4">PAST WORKS</h2>
       <p id="past-works-title" class="text-2xl font-serif tracking-widest text-[#1B2A47]">過去の加工一覧</p>
     </div>
     <div id="works-list" class="flex flex-col gap-12" aria-live="polite">
       <p class="text-center text-sm text-stone-400 py-8">加工事例を読み込んでいます。</p>
+    </div>
+    <div class="pt-4 text-center">
+      <button id="works-more" type="button" class="hidden inline-flex items-center gap-4 text-[11px] tracking-[0.2em] px-12 py-5 border border-stone-300 text-stone-600 hover:border-[#1B2A47] hover:bg-[#1B2A47] hover:text-white transition-colors duration-500">
+        もっと見る
+        <span aria-hidden="true">↓</span>
+      </button>
     </div>
   </div>
 </section>

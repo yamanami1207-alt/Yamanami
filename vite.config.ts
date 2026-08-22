@@ -14,7 +14,6 @@ export default defineConfig(() => {
       rollupOptions: {
         input: {
           main: path.resolve(__dirname, 'index.html'),
-          brace: path.resolve(__dirname, 'BRACE.html'),
           stonework: path.resolve(__dirname, 'stonework/index.html'),
         },
       },
