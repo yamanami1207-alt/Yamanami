@@ -39,7 +39,21 @@
       "name": "天然石加工",
       "serviceType": ["天然石穴あけ加工", "天然石穴拡張加工", "天然石切断加工", "天然石研磨加工", "天然石彫刻加工", "天然石アクセサリー加工"],
       "description": "天然石の穴あけ、穴拡張、切断、研磨、彫刻、アクセサリー加工を自社工房で承ります。",
-      "provider": {"@id": "https://ishiya-san.com/#ishikiri-store"},
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://ishiya-san.com/#business",
+        "name": "有限会社やまなみ銘石",
+        "url": "https://ishiya-san.com/",
+        "telephone": "+81-72-985-0131",
+        "address": {
+          "@type": "PostalAddress",
+          "postalCode": "579-8011",
+          "addressRegion": "大阪府",
+          "addressLocality": "東大阪市",
+          "streetAddress": "東石切町1-5-1",
+          "addressCountry": "JP"
+        }
+      },
       "areaServed": ["大阪府", "東大阪市", "日本"]
     }
   ]
@@ -259,10 +273,11 @@ BACK
 </p>
 </div>
 
-<div class="mb-32 text-center max-w-2xl mx-auto px-4 fade-in">
+<div class="mb-0 pb-16 text-center max-w-2xl mx-auto px-4 fade-in">
 <p class="text-[13px] text-stone-500 leading-[2.6] font-light mb-8">
 天然石の加工に関するご相談・お見積もりは、下記の専用フォームより承っております。<br class="hidden md:block">
-掲載していない加工のご相談も大歓迎です。石切本店への直接のお持ち込みも可能です。
+掲載していない加工のご相談も大歓迎です。石切への直接のお持ち込みも可能です。<br class="hidden md:block">
+遠方にお住まいのお客様からの郵送によるご依頼も承っております。お気軽にご相談ください。
 </p>
 
 <div class="mt-8">
@@ -273,15 +288,9 @@ BACK
 </div>
 </div>
 
-<div class="pb-24 text-center">
-<a href="/#works" class="text-[10px] tracking-[0.3em] font-light text-stone-800 hover:text-stone-400 transition-colors uppercase border-b border-stone-800 hover:border-stone-400 pb-2">
-RETURN TO HOME
-</a>
-</div>
-
 </div> <!-- End Services View -->
 
-<section id="works" class="bg-white border-t border-stone-200 py-24 px-6 md:px-12 scroll-mt-24" aria-labelledby="past-works-title">
+<section id="works" class="bg-white border-t border-stone-200 py-16 px-6 md:px-12 scroll-mt-24" aria-labelledby="past-works-title">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-12">
       <h2 class="text-sm tracking-[0.3em] font-light text-stone-400 mb-4">PAST WORKS</h2>
@@ -301,7 +310,11 @@ RETURN TO HOME
 
 </main>
 <footer class="py-16 px-6 text-center border-t border-stone-200 bg-white">
-  <p class="text-sm font-serif tracking-[0.2em] font-light text-stone-400">有限会社 やまなみ銘石</p>
+  <p class="text-sm font-serif tracking-[0.2em] font-light text-stone-400">有限会社やまなみ銘石</p>
+  <address class="not-italic mt-5 text-[11px] font-light leading-[2.2] tracking-wide text-stone-400">
+    <p>〒579-8011 大阪府東大阪市東石切町1-5-1</p>
+    <p><a href="tel:0729850131" class="hover:text-stone-700 transition-colors">TEL：072-985-0131</a></p>
+  </address>
 </footer>
 </body>
 </html>
