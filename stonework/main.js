@@ -70,7 +70,7 @@ const updateMoreButton = () => {
     return;
   }
   worksMoreButton.classList.remove('hidden');
-  worksMoreButton.textContent = `さらに10件見る（残り${remaining}件）`;
+  worksMoreButton.textContent = 'もっと見る';
 };
 
 const renderWorks = () => {
@@ -167,6 +167,39 @@ const setupSliders = () => {
   });
 };
 
+const setupStoneworkMenu = () => {
+  const menuButton = document.getElementById('stonework-menu-btn');
+  const menu = document.getElementById('stonework-menu');
+  const closeButton = document.getElementById('stonework-menu-close');
+  if (!menuButton || !menu || !closeButton) return;
+
+  const closeMenu = () => {
+    menu.classList.add('opacity-0', '-translate-y-5');
+    menu.classList.remove('opacity-100', 'translate-y-0');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+    window.setTimeout(() => menu.classList.add('hidden'), 300);
+  };
+
+  const openMenu = () => {
+    menu.classList.remove('hidden');
+    window.requestAnimationFrame(() => {
+      menu.classList.remove('opacity-0', '-translate-y-5');
+      menu.classList.add('opacity-100', 'translate-y-0');
+    });
+    menuButton.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
+  };
+
+  menuButton.addEventListener('click', openMenu);
+  closeButton.addEventListener('click', closeMenu);
+  menu.querySelectorAll('.stonework-menu-link').forEach((link) => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') closeMenu();
+  });
+};
+
 revealDetailContent();
 setupSliders();
+setupStoneworkMenu();
 loadWorks();

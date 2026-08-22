@@ -16,8 +16,6 @@ https://ishiya-san.com/stonework/
 | `VIEW MORE` | `/stonework/` | STONEWORKの先頭。加工の詳細から表示 |
 | `過去の加工一覧を見る` | `/stonework/#works` | 同じSTONEWORK内の「過去の加工一覧」位置から表示 |
 
-`#works` は別ページではありません。STONEWORKページの下部にある加工事例位置へ移動するための指定です。
-
 ## STONEWORKページの内容
 
 ```text
@@ -32,6 +30,19 @@ https://ishiya-san.com/stonework/
 過去の加工一覧
   最新5件を常時表示
   「もっと見る」で10件ずつ追加表示
+  すべて表示した時点で「もっと見る」は消える
+```
+
+## 右上の三本線メニュー
+
+STONEWORKページ右上の三本線を押すと、次の場所へ移動できます。
+
+```text
+HOME             メインページ
+STONEWORK        加工の詳細の先頭
+PAST WORKS       過去の加工一覧
+ITEM             オンラインストア
+CONTACT          お問い合わせフォーム
 ```
 
 ## CUSTOMの削除
