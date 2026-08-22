@@ -90,51 +90,48 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeElements.forEach(el => observer.observe(el));
 
     /* =========================================
-       Navigation & Views (Home vs Services)
+       Navigation
        ========================================= */
     const homeView = document.getElementById('home-view');
-    const servicesView = document.getElementById('services-view');
-    
+
     function navigateTo(view) {
-        if (view === 'services') {
-            homeView.style.display = 'none';
-            servicesView.style.display = 'block';
-            window.scrollTo(0, 0);
-            if (typeof gtag === 'function') {
-                gtag('event', 'page_view', {
-                    page_path: '/services',
-                    page_title: '加工詳細'
-                });
-            }
-        } else {
-            servicesView.style.display = 'none';
+        if (view === 'stonework' || view === 'services') {
+            window.location.href = '/stonework/';
+            return;
+        }
+
+        if (homeView) {
             homeView.style.display = 'block';
-            if (typeof gtag === 'function') {
-                gtag('event', 'page_view', {
-                    page_path: '/',
-                    page_title: '有限会社 やまなみ銘石'
-                });
-            }
+        }
+
+        if (typeof gtag === 'function') {
+            gtag('event', 'page_view', {
+                page_path: '/',
+                page_title: '有限会社 やまなみ銘石'
+            });
         }
     }
 
     document.querySelectorAll('[data-route]').forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
             const route = link.getAttribute('data-route');
-            if (route === 'services') {
-                navigateTo('services');
-            } else {
-                navigateTo('home');
-                const target = link.getAttribute('href');
-                if (target && target.startsWith('#')) {
-                    setTimeout(() => {
-                        const el = document.querySelector(target);
-                        if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }, 50);
-                } else if (route === 'home-top') {
-                    window.scrollTo(0, 0);
-                }
+            if (route === 'stonework' || route === 'services') {
+                e.preventDefault();
+                navigateTo('stonework');
+                return;
+            }
+
+            navigateTo('home');
+            const target = link.getAttribute('href');
+            if (target && target.startsWith('#')) {
+                e.preventDefault();
+                setTimeout(() => {
+                    const element = document.querySelector(target);
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                }, 50);
+            } else if (route === 'home-top') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         });
     });
@@ -760,134 +757,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load blogs on start
     loadBlogPosts();
 
-    /* =========================================
-       MicroCMS Works Integration
-       ========================================= */
-    const setupWorksModal = () => {
-        const openWorksBtn = document.getElementById('open-works-modal-btn');
-        const openWorksBtnServices = document.getElementById('open-works-modal-btn-services');
-        const worksModal = document.getElementById('works-modal');
-        const worksModalClose = document.getElementById('works-modal-close');
-        const worksModalBody = document.getElementById('works-modal-body');
-        const worksModalContainer = document.getElementById('works-modal-content-container');
-        
-        if (!worksModal) return;
-
-        let worksLoaded = false;
-
-        const openModal = async () => {
-            worksModal.style.opacity = '1';
-            worksModal.style.pointerEvents = 'auto';
-            worksModalContainer.classList.remove('scale-95');
-            worksModalContainer.classList.add('scale-100');
-            document.body.style.overflow = 'hidden';
-
-            if (worksLoaded) return;
-
-            const apiKey = import.meta.env.VITE_MICROCMS_API_KEY;
-            if (!apiKey) {
-                worksModalBody.innerHTML = '<div class="text-center text-sm text-stone-400 py-8">APIキーが設定されていません</div>';
-                return;
-            }
-
-            try {
-                const response = await fetch('https://yamanami.microcms.io/api/v1/works?limit=50', {
-                    headers: {
-                        'X-MICROCMS-API-KEY': apiKey,
-                    }
-                });
-
-                if (!response.ok) {
-                    throw new Error('Failed to fetch works');
-                }
-
-                const data = await response.json();
-                
-                if (data.contents.length === 0) {
-                    worksModalBody.innerHTML = '<div class="text-center text-sm text-stone-400 py-8">過去の加工事例はまだありません</div>';
-                    worksLoaded = true;
-                    return;
-                }
-
-                const html = data.contents.map(post => {
-                    const dateRaw = post.date || post.publishedAt || post.createdAt;
-                    const date = new Date(dateRaw).toLocaleDateString('ja-JP', {
-                        year: 'numeric',
-                        month: '2-digit',
-                        day: '2-digit'
-                    }).replace(/\//g, '.');
-
-                    let imagesHtml = '';
-                    if (post.image_before || post.image_after) {
-                        imagesHtml = `
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-6">
-                                ${post.image_before ? `
-                                <div class="flex flex-col gap-2">
-                                    <span class="text-[10px] tracking-widest text-stone-400 bg-stone-100 self-start px-2 py-1 rounded-sm">BEFORE</span>
-                                    <img src="${post.image_before.url}?w=800" class="w-full h-auto rounded-sm object-cover aspect-video bg-stone-100" loading="lazy" alt="Before">
-                                </div>
-                                ` : '<div></div>'}
-                                ${post.image_after ? `
-                                <div class="flex flex-col gap-2">
-                                    <span class="text-[10px] tracking-widest text-[#1B2A47] bg-[#1B2A47]/10 self-start px-2 py-1 rounded-sm">AFTER</span>
-                                    <img src="${post.image_after.url}?w=800" class="w-full h-auto rounded-sm object-cover aspect-video bg-stone-100" loading="lazy" alt="After">
-                                </div>
-                                ` : '<div></div>'}
-                            </div>
-                        `;
-                    }
-
-                    return `
-                        <div class="border-b border-stone-200 pb-12 mb-12 last:border-0 last:pb-0 last:mb-0">
-                            <span class="text-[11px] font-sans text-stone-400 tracking-wider mb-2 block">${date}</span>
-                            <h3 class="text-xl font-serif tracking-widest text-[#1B2A47] mb-6 pb-4 border-b border-stone-100 block w-full max-w-md">${post.stone_type || '加工実績'}</h3>
-                            ${imagesHtml}
-                            ${post.content ? `
-                                <div class="prose prose-stone text-[14px] leading-loose text-stone-600 max-w-none mt-6">
-                                    ${post.content}
-                                </div>
-                            ` : ''}
-                        </div>
-                    `;
-                }).join('');
-
-                worksModalBody.innerHTML = html;
-                worksLoaded = true;
-
-            } catch (error) {
-                console.error('Error fetching works:', error);
-                worksModalBody.innerHTML = '<div class="text-center text-sm text-stone-400 py-8">事例の読み込みに失敗しました。</div>';
-            }
-        };
-
-        const closeModal = () => {
-            worksModal.style.opacity = '0';
-            worksModal.style.pointerEvents = 'none';
-            worksModalContainer.classList.remove('scale-100');
-            worksModalContainer.classList.add('scale-95');
-            document.body.style.overflow = '';
-        };
-
-        if (openWorksBtn) {
-            openWorksBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                openModal();
-            });
-        }
-        
-        if (openWorksBtnServices) {
-            openWorksBtnServices.addEventListener('click', (e) => {
-                e.preventDefault();
-                openModal();
-            });
-        }
-
-        worksModalClose.addEventListener('click', closeModal);
-        worksModal.addEventListener('click', (e) => {
-            if (e.target === worksModal) closeModal();
-        });
-    };
-
-    setupWorksModal();
 
 });
