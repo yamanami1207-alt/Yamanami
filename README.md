@@ -79,3 +79,47 @@ VITE_MICROCMS_API_KEY
 ```
 
 すでに公開環境に設定済みなら、追加作業は不要です。APIキーはZIPに含めていません。
+
+## SEO優先1・2 実装済み
+
+今回のファイルには、次のSEO設定を実装しています。
+
+| 実装内容 | 対象 |
+|---|---|
+| 「天然石加工・穴あけ・研磨・切断・彫刻・大阪・東大阪」を含むtitleとdescription | STONEWORK |
+| canonical、robots | トップ・STONEWORK |
+| OGP・Xカード | トップ・STONEWORK |
+| LocalBusiness構造化データ（本店の住所・電話・営業時間・位置情報） | トップ |
+| WebPage・Service構造化データ | STONEWORK |
+| 加工内容が伝わるH1と画像alt | STONEWORK |
+
+公開後は、Google Search Consoleで `https://ishiya-san.com/` と `https://ishiya-san.com/stonework/` をURL検査し、サイトマップを送信してください。構造化データは [Googleのリッチリザルトテスト](https://search.google.com/test/rich-results) で確認できます。
+
+> 注意：構造化データに含めた住所・電話番号・営業時間は、現在のトップページに記載されている本店情報を使っています。店舗情報を変更した場合は、この情報も必ず更新してください。
+
+## Google検索での表示名・ページタイトル
+
+トップページのタイトルは次の表記です。
+
+```text
+天然石の加工・原石・屋久杉販売店｜有限会社やまなみ銘石
+```
+
+STONEWORKのタイトルは次の表記です。
+
+```text
+天然石加工｜穴あけ・研磨・切断・彫刻｜やまなみ銘石
+```
+
+トップページにはWebSite構造化データを追加し、検索結果のサイト名として「有限会社やまなみ銘石」、別名として「やまなみ銘石」をGoogleへ明示しています。Googleの最終表示は検索語やGoogle側の判断で変わる場合があります。
+
+## 最終決定した検索結果タイトルとSEO設定
+
+| ページ | title |
+|---|---|
+| トップページ | `天然石・原石・屋久杉販売と天然石加工｜やまなみ銘石（大阪・石切）` |
+| STONEWORK | `天然石加工のご依頼・加工事例｜穴あけ・研磨・切断・彫刻｜やまなみ銘石` |
+
+トップページには、商品販売・天然石加工・大阪/石切の地域性を伝えるdescription、canonical、robots、OGP・Xカード、LocalBusiness・WebSite構造化データを実装しています。
+
+STONEWORKには、天然石加工のご依頼と加工事例を伝えるdescription、canonical、robots、OGP・Xカード、WebPage・Service構造化データを実装しています。画面上の大見出しも`天然石加工のご依頼・加工事例`へ統一しています。
