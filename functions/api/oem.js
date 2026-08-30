@@ -57,7 +57,8 @@ function normalizeRecord(item) {
 
 export async function onRequestGet(context) {
   const { env, request, waitUntil } = context;
-  if (!env.MICROCMS_API_KEY) return json({ message: 'microCMS連携の設定が完了していません。' }, 503);
+  const apiKey = env.MICROCMS_API_KEY || env.VITE_MICROCMS_API_KEY;
+  if (!apiKey) return json({ message: 'microCMS連携の設定が完了していません。' }, 503);
 
   const requestUrl = new URL(request.url);
   const cache = caches.default;
@@ -71,7 +72,7 @@ export async function onRequestGet(context) {
 
   let upstream;
   try {
-    upstream = await fetch(endpoint.toString(), { headers: { 'X-MICROCMS-API-KEY': env.MICROCMS_API_KEY } });
+    upstream = await fetch(endpoint.toString(), { headers: { 'X-MICROCMS-API-KEY': apiKey } });
   } catch {
     return json({ message: '出荷実績の読み込みに失敗しました。' }, 502);
   }
