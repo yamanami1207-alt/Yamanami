@@ -20,6 +20,12 @@ function firstNumber(...values) {
   return null;
 }
 
+function dateOnly(...values) {
+  const value = firstString(...values);
+  const match = value.match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})/);
+  return match ? `${match[1]}-${match[2].padStart(2, '0')}-${match[3].padStart(2, '0')}` : '';
+}
+
 function normalizeImage(image) {
   if (!image || typeof image.url !== 'string') return null;
   return { url: image.url, width: Number(image.width) || null, height: Number(image.height) || null };
@@ -49,7 +55,7 @@ function normalizeRecord(item) {
     customerType,
     quantity,
     unit: quantity !== null ? unit : '',
-    deliveredAt: firstString(item.delivered_at, item.deliveredAt, item.delivery_date, item.date),
+    deliveredAt: dateOnly(item.delivered_at, item.deliveredAt, item.delivery_date, item.date),
     summary: firstString(item.summary, item.description, item.comment, item.body),
     images: findImages(item)
   };
