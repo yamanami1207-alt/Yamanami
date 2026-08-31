@@ -50,7 +50,7 @@ function normalizeRecord(item) {
 
   return {
     id: String(item.id || ''),
-    publicTitle: `${customerType}へ${productType}${countText ? ` ${countText}` : ''}を納品`,
+    publicTitle: `${customerType}${productType}${countText ? ` ${countText}` : ''}`,
     productType,
     customerType,
     quantity,
