@@ -9,7 +9,13 @@ function json(data, status = 200) {
 }
 
 function firstString(...values) {
-  return values.find((value) => typeof value === 'string' && value.trim())?.trim() || '';
+  for (const value of values) {
+    const candidate = Array.isArray(value)
+      ? value.find((item) => typeof item === 'string' && item.trim())
+      : value;
+    if (typeof candidate === 'string' && candidate.trim()) return candidate.trim();
+  }
+  return '';
 }
 
 function firstNumber(...values) {
