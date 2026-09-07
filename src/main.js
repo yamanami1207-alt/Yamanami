@@ -14,65 +14,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.scrollTo(0, 0);
     
-    document.body.style.overflow = 'hidden';
-
+    // ロゴの起動演出は使用せず、本文をすぐに表示する
     const foucPrevention = document.getElementById('fouc-prevention');
+    if (foucPrevention) foucPrevention.remove();
+    document.body.style.overflow = '';
 
-    /* =========================================
-       Loader
-       ========================================= */
-    const loader = document.getElementById('loader');
-    const loaderContent = document.getElementById('loader-content');
-    const loaderCircle = document.querySelector('.loader-circle');
-    const loaderText = document.querySelector('.loader-text');
-    
-    // Initial entrance anim
-    setTimeout(() => {
-        loaderContent.style.opacity = '1';
-        loaderContent.style.transform = 'scale(1)';
-        loaderContent.style.transition = 'transform 1.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease-in-out';
-        loaderText.style.opacity = '1';
-        loaderText.style.transition = 'opacity 1s ease-in-out 0.5s';
-    }, 50);
+    const heroBg = document.getElementById('hero-bg');
+    if (heroBg) {
+        heroBg.style.transform = 'scale(1)';
+    }
 
-    // Hide loader
-    setTimeout(() => {
-        if (foucPrevention) foucPrevention.remove();
-        loader.style.opacity = '0';
-        
-        // 起動時のズームアウト (Hero Background)
-        const heroBg = document.getElementById('hero-bg');
-        if (heroBg) {
-            heroBg.style.transition = 'transform 2.5s cubic-bezier(0.16, 1, 0.3, 1)';
-            heroBg.style.transform = 'scale(1)';
-        }
-
-        setTimeout(() => {
-            document.body.style.overflow = '';
-            
-            // Immediately force to top as soon as overflow is restored
-            if (!targetHash) {
-                window.scrollTo(0, 0);
-                document.documentElement.scrollTop = 0;
-                document.body.scrollTop = 0;
-            }
-            
-            loader.style.display = 'none';
-            // One last enforcement
-            if (!targetHash) {
-                window.scrollTo(0, 0);
-            } else if (targetHash === '#services') {
-                navigateTo('services');
-            } else {
-                const target = document.querySelector(targetHash);
-                if (target) {
-                    setTimeout(() => {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }, 50);
-                }
-            }
-        }, 800);
-    }, 3200);
+    if (!targetHash) {
+        window.scrollTo(0, 0);
+    }
 
     /* =========================================
        Intersection Observer for Fade-In

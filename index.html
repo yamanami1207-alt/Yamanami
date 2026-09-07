@@ -80,16 +80,8 @@ gtag('config', 'G-KEB96Y48V1');
     "inLanguage": "ja-JP"
   }
   </script>
-<style id="fouc-prevention">
-body > *:not(#loader) { display: none !important; }
-#loader {
-position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 100;
-background-color: #fdfdfc;
-display: flex; flex-direction: column; align-items: center; justify-content: center;
-}
-#loader-content { opacity: 0; }
-.loader-text { opacity: 0; }
-body { background-color: #fdfdfc; margin: 0; overflow: hidden; }
+<style>
+body { background-color: #fdfdfc; margin: 0; }
 </style>
 <script type="module" src="/src/main.js"></script>
 <link rel="icon" href="/assets/favicon.jpg">
@@ -163,14 +155,6 @@ body { background-color: #fdfdfc; margin: 0; overflow: hidden; }
 <div id="works-modal-body" class="p-8 md:p-12 pt-0 w-full flex flex-col gap-12">
 <div class="text-center text-sm text-stone-400 py-8">読み込み中...</div>
 </div>
-</div>
-</div>
-
-<!-- Loading Overlay -->
-<div id="loader" class="fixed inset-0 z-[100] bg-[#fdfdfc] flex items-center justify-center overflow-hidden transition-opacity duration-800 ease-in-out">
-<div id="loader-content" class="flex flex-col items-center justify-center" style="transform: scale(15);">
-<img src="/assets/logo.png" alt="Yamanami Meiseki Logo" class="w-32 h-32 md:w-56 md:h-56 object-contain mb-8 loader-circle">
-<p class="text-[14px] md:text-[18px] tracking-[0.4em] font-serif text-[#1B2A47] whitespace-nowrap opacity-0 loader-text">SINCE 1990</p>
 </div>
 </div>
 
@@ -275,14 +259,14 @@ CONTACT <span class="text-[10px] font-sans font-light text-stone-400">お問い�
 <div class="max-w-6xl mx-auto">
 <div class="text-center mb-24 fade-in">
 <h2 class="text-sm tracking-[0.3em] indent-[0.3em] font-light text-stone-400 mb-6">WORKS</h2>
-<a href="/stonework/" class="inline-block group cursor-pointer">
+<a href="/stonework/" class="inline-block group cursor-pointer" aria-label="天然石加工の依頼・料金・加工事例を見る" title="天然石加工の依頼・料金・加工事例を見る">
 <p class="text-3xl font-serif tracking-[0.1em] indent-[0.1em] text-[#1B2A47] group-hover:text-stone-500 transition-colors">天然石の加工</p>
 </a>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 fade-in delay-100">
 <!-- 1 -->
-<div class="group cursor-pointer flex flex-col gap-4 items-start" role="link" tabindex="0" onclick="window.location.href='/stonework/'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/stonework/'}">
+<div class="group cursor-pointer flex flex-col gap-4 items-start" role="link" aria-label="アクセサリー・ペンダント加工の詳細を見る" tabindex="0" onclick="window.location.href='/stonework/'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/stonework/'}">
 <div class="pt-2">
 <h4 class="text-base font-serif tracking-widest mb-4 text-stone-800 group-hover:text-stone-500 transition-colors"><span class="sr-only">天然石の</span>アクセサリー・ペンダント加工</h4>
 <p class="text-[13px] font-light text-stone-500 line-clamp-2 leading-[2.2] mb-6">思い出の石を、日常を彩るジュエリーへ。石のサイズや雰囲気に調和する最適な金具をご提案します。</p>
@@ -293,7 +277,7 @@ VIEW MORE
 </div>
 </div>
 <!-- 2 -->
-<div class="group cursor-pointer flex flex-col gap-4 items-start" role="link" tabindex="0" onclick="window.location.href='/stonework/'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/stonework/'}">
+<div class="group cursor-pointer flex flex-col gap-4 items-start" role="link" aria-label="彫刻加工の詳細を見る" tabindex="0" onclick="window.location.href='/stonework/'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/stonework/'}">
 <div class="pt-2">
 <h4 class="text-base font-serif tracking-widest mb-4 text-stone-800 group-hover:text-stone-500 transition-colors"><span class="sr-only">天然石の</span>彫刻加工</h4>
 <p class="text-[13px] font-light text-stone-500 line-clamp-2 leading-[2.2] mb-6">大切な石に、特別な意味を刻みます。お名前や記念日など、職人が一文字ずつ正確に彫り込みます。</p>
@@ -304,7 +288,7 @@ VIEW MORE
 </div>
 </div>
 <!-- 3 -->
-<div class="group cursor-pointer flex flex-col gap-4 items-start" role="link" tabindex="0" onclick="window.location.href='/stonework/'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/stonework/'}">
+<div class="group cursor-pointer flex flex-col gap-4 items-start" role="link" aria-label="穴あけ・拡張加工の詳細を見る" tabindex="0" onclick="window.location.href='/stonework/'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/stonework/'}">
 <div class="pt-2">
 <h4 class="text-base font-serif tracking-widest mb-4 text-stone-800 group-hover:text-stone-500 transition-colors"><span class="sr-only">天然石の</span>穴あけ・拡張加工</h4>
 <p class="text-[13px] font-light text-stone-500 line-clamp-2 leading-[2.2] mb-6">ペンダントトップの加工や、革紐用など、ご希望の位置へ正確にアプローチいたします。</p>
@@ -315,7 +299,7 @@ VIEW MORE
 </div>
 </div>
 <!-- 4 -->
-<div class="group cursor-pointer flex flex-col gap-4 items-start" role="link" tabindex="0" onclick="window.location.href='/stonework/'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/stonework/'}">
+<div class="group cursor-pointer flex flex-col gap-4 items-start" role="link" aria-label="切断・研磨加工の詳細を見る" tabindex="0" onclick="window.location.href='/stonework/'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='/stonework/'}">
 <div class="pt-2">
 <h4 class="text-base font-serif tracking-widest mb-4 text-stone-800 group-hover:text-stone-500 transition-colors"><span class="sr-only">天然石の</span>切断・研磨加工</h4>
 <p class="text-[13px] font-light text-stone-500 line-clamp-2 leading-[2.2] mb-6">専用機材と熟練の技術で、石が持つ本来の輝きと美しさを引き出します。大きな原石の分割も承ります。</p>
@@ -700,13 +684,13 @@ BACK
 <div class="w-full mb-10 group relative slider-component overflow-hidden rounded-sm">
 <div class="flex w-full slides-container will-change-transform">
 <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-<img src="/assets/pen1.png" alt="事例1" class="w-full h-full object-contain">
+<img src="/assets/pen1.png" alt="トパーズを研磨してペンダント加工をした加工事例。加工前と加工後の比較" class="w-full h-full object-contain">
 </div>
 <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-<img src="/assets/pen2.png" alt="事例2" class="w-full h-full object-contain">
+<img src="/assets/pen2.png" alt="スピネルを研磨してペンダント加工をした加工事例。加工前と加工後の比較" class="w-full h-full object-contain">
 </div>
 <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-<img src="/assets/pen3.png" alt="事例3" class="w-full h-full object-contain">
+<img src="/assets/pen3.png" alt="瑪瑙を研磨してペンダント加工をした加工事例。加工前と加工後の比較" class="w-full h-full object-contain">
 </div>
 </div>
 <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 dots-container z-10">
@@ -735,7 +719,7 @@ BACK
 <div class="w-full mb-10 group relative slider-component overflow-hidden rounded-sm">
 <div class="flex w-full slides-container will-change-transform">
 <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-<img src="/assets/tyo1.jpg" alt="事例" class="w-full h-full object-contain">
+<img src="/assets/tyo1.jpg" alt="天然石に彫刻した加工事例" class="w-full h-full object-contain">
 </div>
 </div>
 </div>
@@ -775,10 +759,10 @@ BACK
 <div class="w-full mb-10 group relative slider-component overflow-hidden rounded-sm">
 <div class="flex w-full slides-container will-change-transform">
 <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-<img src="/assets/ana1.png" alt="事例1" class="w-full h-full object-contain">
+<img src="/assets/ana1.png" alt="天然石に穴を開けた加工事例" class="w-full h-full object-contain">
 </div>
 <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-<img src="/assets/ana2.png" alt="事例2" class="w-full h-full object-contain">
+<img src="/assets/ana2.png" alt="天然石の穴を拡張した加工事例" class="w-full h-full object-contain">
 </div>
 </div>
 <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 dots-container z-10">
@@ -813,13 +797,13 @@ BACK
 <div class="w-full mb-10 group relative slider-component overflow-hidden rounded-sm">
 <div class="flex w-full slides-container will-change-transform">
 <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-<img src="/assets/ken1.png" alt="事例1" class="w-full h-full object-contain">
+<img src="/assets/ken1.png" alt="天然石を切断し、切断面を研磨した加工事例" class="w-full h-full object-contain">
 </div>
 <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-<img src="/assets/ken2.png" alt="事例2" class="w-full h-full object-contain">
+<img src="/assets/ken2.png" alt="天然石を研磨した加工事例" class="w-full h-full object-contain">
 </div>
 <div class="min-w-full aspect-video overflow-hidden bg-stone-100 relative max-w-full flex-shrink-0">
-<img src="/assets/ken3.png" alt="事例3" class="w-full h-full object-contain">
+<img src="/assets/ken3.png" alt="天然石のラピスラズリを研磨した加工事例" class="w-full h-full object-contain">
 </div>
 </div>
 <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex justify-center gap-2 dots-container z-10">

@@ -77,17 +77,6 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
-/* Loader */
-#loader {
-  transition: opacity 0.8s ease-in-out;
-}
-.loader-circle {
-  transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.loader-text {
-  transition: opacity 1s ease-in-out 0.8s;
-}
-
 /* Accordion */
 .accordion-content {
   max-height: 0;
